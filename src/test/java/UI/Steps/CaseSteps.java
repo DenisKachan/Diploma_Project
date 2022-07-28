@@ -4,23 +4,24 @@ import UI.Utils.TestConstants;
 import com.codeborne.selenide.Condition;
 
 public class CaseSteps extends BaseStep implements TestConstants {
-    public void successfulCaseCreation() {
+    public void caseCreation(String title, String description, String preConditions, String postConditions,
+                                       String status, String severity, String priority, String type,
+                                       String layer, String flaky, String behavior, String automationStatus) {
         loginPage.successfulLogin();
-        listOfProjectsPage.clickCreateButton();
+        listOfProjectsPage.clickCreateProjectButton();
         createNewProjectPage.successfulProjectCreation();
         repositoryPage.clickCreateCaseButton();
-        createNewCasePage.createNewCase();
+        createNewCasePage.caseCreation(title,description,preConditions,postConditions,
+                status,severity,priority,type,
+                layer,flaky,behavior,automationStatus);
         createNewCasePage.save();
-        repositoryPage.testCaseTitle.should(Condition.have(Condition.text(TEST_CASE_TITLE)));
     }
 
-    public void invalidCaseCreation() {
-        loginPage.successfulLogin();
-        listOfProjectsPage.clickCreateButton();
-        createNewProjectPage.successfulProjectCreation();
-        repositoryPage.clickCreateCaseButton();
-        createNewCasePage.invalidCaseCreation();
-        createNewCasePage.save();
+    public void successfulCaseCreationChecking(String testCaseTitle){
+        repositoryPage.testCaseTitle.should(Condition.have(Condition.text(testCaseTitle)));
+    }
+
+    public void invalidCaseCreationChecking(){
         createNewCasePage.title.shouldBe(Condition.visible);
     }
 }

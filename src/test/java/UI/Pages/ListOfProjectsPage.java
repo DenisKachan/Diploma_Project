@@ -7,13 +7,12 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class ListOfProjectsPage {
-    public SelenideElement title = $x("//h1[text()='Projects']");
-    public SelenideElement createButton = $(By.id("createButton"));
+    public SelenideElement createProjectButton = $(By.id("createButton"));
     public SelenideElement accountImage = $(By.className("Eb2vGG"));
     public SelenideElement signOutButton = $x("//span[text()='Sign out']");
 
-    public CreateNewProjectPage clickCreateButton() {
-        createButton.click();
+    public CreateNewProjectPage clickCreateProjectButton() {
+        createProjectButton.click();
         return new CreateNewProjectPage();
     }
 

@@ -4,11 +4,6 @@ import com.github.javafaker.Faker;
 
 public interface TestConstants {
     Faker faker = new Faker();
-    String VALID_EMAIL = "den.kachan.98@mail.ru";
-    String VALID_PASSWORD = "proEVOlution20jomaQ";
-    String INVALID_EMAIL = "vasia@55mail.ru";
-    String INVALID_PASSWORD = "adfdfsadf";
-    String PROJECT_INVALID_CODE = ".@###:";
     String PROJECT_DESCRIPTION = "Test description";
     String TEST_CASE_TITLE = faker.country().name();
     String TEST_CASE_DESCRIPTION = "Test case description";
@@ -28,5 +23,4 @@ public interface TestConstants {
     String TEST_RUN_TITLE = faker.artist().name();
     String DEFECT_TITLE = faker.name().firstName();
     String DEFECT_ACTUAL_RESULT = "Defect result";
-
 }

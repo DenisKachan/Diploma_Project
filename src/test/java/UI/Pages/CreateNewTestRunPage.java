@@ -13,23 +13,22 @@ public class CreateNewTestRunPage implements TestConstants {
     public SelenideElement doneButton = $(By.id("select-cases-done-button"));
     public SelenideElement saveRunButton = $(By.id("save-run-button"));
 
-    public ListOfTestRunsPage successfulTestRunCreation() {
+    public void testRunCreation(String testRunTitle) {
         title.clear();
-        title.sendKeys(TEST_RUN_TITLE);
+        title.sendKeys(testRunTitle);
         addCasesButton.click();
         selectTestCaseCheckBox.click();
         doneButton.click();
+    }
+
+    public ListOfTestRunsPage saveTestRun(){
         saveRunButton.click();
         return new ListOfTestRunsPage();
     }
 
-    public void invalidTestRunCreation() {
-        title.clear();
-        title.sendKeys("");
-        addCasesButton.click();
-        selectTestCaseCheckBox.click();
-        doneButton.click();
-        saveRunButton.click();
+    public void successfulTestRunCreation(){
+        testRunCreation(TEST_RUN_TITLE);
+        saveTestRun();
     }
 
 }

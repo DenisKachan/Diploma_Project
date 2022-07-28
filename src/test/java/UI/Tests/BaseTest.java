@@ -1,15 +1,12 @@
 package UI.Tests;
 
-
 import UI.BrowserConfig.SelenideConfiguration;
 import UI.Steps.*;
 import UI.Utils.PropertyReader;
 import com.codeborne.selenide.WebDriverRunner;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-
 import java.util.Optional;
-
 import static com.codeborne.selenide.Selenide.open;
 
 public class BaseTest {
@@ -32,7 +29,6 @@ public class BaseTest {
         suiteSteps = new SuiteSteps();
         testRunSteps = new TestRunSteps();
         defectsSteps = new DefectsSteps();
-
     }
 
     @AfterMethod

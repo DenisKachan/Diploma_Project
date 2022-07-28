@@ -5,23 +5,20 @@ import UI.Utils.TestConstants;
 import com.codeborne.selenide.Condition;
 
 public class SuiteSteps extends BaseStep implements TestConstants {
-    public void successfulSuiteCreation() {
+    public void suiteCreation(String suiteName, String suiteDescription, String suitePreconditions) {
         loginPage.successfulLogin();
-        listOfProjectsPage.clickCreateButton();
+        listOfProjectsPage.clickCreateProjectButton();
         createNewProjectPage.successfulProjectCreation();
         repositoryPage.clickCreateSuiteButton();
-        createNewSuitePage.createNewSuite();
+        createNewSuitePage.newSuiteCreation(suiteName,suiteDescription,suitePreconditions);
         createNewSuitePage.save();
-        repositoryPage.testSuiteTitle.should(Condition.have(Condition.text(TEST_SUITE_NAME)));
     }
 
-    public void invalidSuiteCreation() {
-        loginPage.successfulLogin();
-        listOfProjectsPage.clickCreateButton();
-        createNewProjectPage.successfulProjectCreation();
-        repositoryPage.clickCreateSuiteButton();
-        createNewSuitePage.invalidSuiteCreation();
-        createNewSuitePage.save();
+    public void successfulSuiteCreationChecking(String suiteName){
+        repositoryPage.testSuiteTitle.should(Condition.have(Condition.text(suiteName)));
+    }
+
+    public void invalidSuiteCreationChecking(){
         createNewSuitePage.createSuiteTitle.shouldBe(Condition.visible);
     }
 }

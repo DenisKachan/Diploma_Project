@@ -25,10 +25,10 @@ public class SelenideConfiguration {
     public static void setUpBasicConfigure() {
         PropertyReader propertyReader = new PropertyReader();
         Configuration.baseUrl = propertyReader.getProperty("baseUrl");
-        Configuration.headless = false;
-        Configuration.browserSize = "1920x1080";
-        Configuration.timeout = 15000;
-        Configuration.screenshots = true;
+        Configuration.headless = Boolean.parseBoolean(propertyReader.getProperty("headless"));
+        Configuration.browserSize = propertyReader.getProperty("browserSize");
+        Configuration.timeout = Long.parseLong(propertyReader.getProperty("timeout"));
+        Configuration.screenshots = Boolean.parseBoolean(propertyReader.getProperty("screenshots"));
 
     }
 }

@@ -13,16 +13,10 @@ public class CreateNewDefectPage implements TestConstants {
     public SelenideElement defectActualResult = $x("//p[@class='empty-node']");
     public SelenideElement saveDefectButton = $x("//button[text()='Create defect']");
 
-    public ListOfDefectsPage successfulDefectCreation(){
-        defectTitle.sendKeys(DEFECT_TITLE);
-        defectActualResult.sendKeys(DEFECT_ACTUAL_RESULT);
+    public ListOfDefectsPage defectCreation(String title, String result){
+        defectTitle.sendKeys(title);
+        defectActualResult.sendKeys(result);
         saveDefectButton.click();
         return new ListOfDefectsPage();
     }
-    public void invalidDefectCreation(){
-        defectTitle.sendKeys("");
-        defectActualResult.sendKeys(DEFECT_ACTUAL_RESULT);
-        saveDefectButton.click();
-    }
-
 }

@@ -17,23 +17,18 @@ public class CreateNewProjectPage implements TestConstants {
     public SelenideElement newProjectPrivateType = $(By.id("private-access-type"));
     public SelenideElement createProjectButton = $x("//button[text()='Create project']");
 
-    public void createNewProject(String projectTitle, String projectCode, String projectDescription) {
+    public RepositoryPage createNewProject(String projectTitle, String projectCode, String projectDescription) {
         newProjectTitle.sendKeys(projectTitle);
         newProjectCode.sendKeys(projectCode);
         newProjectDescription.sendKeys(projectDescription);
         newProjectPrivateType.click();
         createProjectButton.click();
+        return new RepositoryPage();
     }
 
-    public CreateNewProjectPage incorrectProjectCreation() {
-        createNewProject("", PROJECT_INVALID_CODE, PROJECT_DESCRIPTION);
-        return this;
-    }
-
-    public RepositoryPage successfulProjectCreation() {
+    public void successfulProjectCreation() {
         Faker faker = new Faker();
         createNewProject(faker.company().name(), faker.code().ean8(), PROJECT_DESCRIPTION);
-        return new RepositoryPage();
     }
 
 }

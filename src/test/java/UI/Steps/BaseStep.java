@@ -15,5 +15,4 @@ public class BaseStep {
     protected TestRunDetailsPage testRunDetailsPage = new TestRunDetailsPage();
     protected ListOfDefectsPage listOfDefectsPage = new ListOfDefectsPage();
     protected CreateNewDefectPage createNewDefectPage = new CreateNewDefectPage();
-
 }

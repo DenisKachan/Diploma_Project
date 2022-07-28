@@ -4,23 +4,20 @@ import UI.Utils.TestConstants;
 import com.codeborne.selenide.Condition;
 
 public class DefectsSteps extends BaseStep implements TestConstants {
-    public void successfulDefectCreation(){
+    public void defectCreation(String defectTitle, String defectResult){
         loginPage.successfulLogin();
-        listOfProjectsPage.clickCreateButton();
+        listOfProjectsPage.clickCreateProjectButton();
         createNewProjectPage.successfulProjectCreation();
         repositoryPage.openDefectsPage();
         listOfDefectsPage.clickCreateNewDefectButton();
-        createNewDefectPage.successfulDefectCreation();
-        listOfDefectsPage.createdDefectTitle.should(Condition.have(Condition.text(DEFECT_TITLE)));
+        createNewDefectPage.defectCreation(defectTitle, defectResult);
     }
 
-    public void invalidDefectCreation(){
-        loginPage.successfulLogin();
-        listOfProjectsPage.clickCreateButton();
-        createNewProjectPage.successfulProjectCreation();
-        repositoryPage.openDefectsPage();
-        listOfDefectsPage.clickCreateNewDefectButton();
-        createNewDefectPage.invalidDefectCreation();
+    public void successfulDefectCreationChecking(String defectTitle){
+        listOfDefectsPage.createdDefectTitle.should(Condition.have(Condition.text(defectTitle)));
+    }
+
+    public void invalidDefectCreationChecking(){
         createNewDefectPage.pageTitle.shouldBe(Condition.visible);
     }
 }
