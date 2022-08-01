@@ -1,6 +1,7 @@
 package UI.Steps;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 
