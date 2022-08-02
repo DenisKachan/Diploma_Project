@@ -2,8 +2,13 @@ package UI.Steps;
 
 import UI.Utils.TestConstants;
 import com.codeborne.selenide.Condition;
+import io.qameta.allure.Step;
+import lombok.extern.log4j.Log4j2;
 
+@Log4j2
 public class CaseSteps extends BaseStep implements TestConstants {
+
+    @Step("Case creation with established data")
     public void caseCreation(String title, String description, String preConditions, String postConditions,
                                        String status, String severity, String priority, String type,
                                        String layer, String flaky, String behavior, String automationStatus) {
@@ -17,11 +22,15 @@ public class CaseSteps extends BaseStep implements TestConstants {
         createNewCasePage.save();
     }
 
+    @Step("Checking for a test case title to be {testCaseTitle}")
     public void successfulCaseCreationChecking(String testCaseTitle){
+        log.info("Checking for a test case title to be {}",testCaseTitle);
         repositoryPage.testCaseTitle.should(Condition.have(Condition.text(testCaseTitle)));
     }
 
+    @Step("Checking for a Create new case page title to be visible")
     public void invalidCaseCreationChecking(){
+        log.info("Checking for a Create new case page title to be visible");
         createNewCasePage.title.shouldBe(Condition.visible);
     }
 }

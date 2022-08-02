@@ -4,7 +4,7 @@ import UI.Utils.TestConstants;
 import org.testng.annotations.Test;
 
 public class TestCaseCreation extends BaseTest implements TestConstants {
-    @Test
+    @Test(description = "Test for valid work of test case creation with valid data")
     public void successfulTestCaseCreation() {
         caseSteps.caseCreation(TEST_CASE_TITLE,TEST_CASE_DESCRIPTION,
                 TEST_CASE_PRE_CONDITIONS,TEST_CASE_POST_CONDITIONS,TEST_CASE_STATUS,
@@ -13,8 +13,8 @@ public class TestCaseCreation extends BaseTest implements TestConstants {
         caseSteps.successfulCaseCreationChecking(TEST_CASE_TITLE);
     }
 
-    @Test
-    public void invalidTestCreation() {
+    @Test(description = "Test for valid work of test case creation with invalid data")
+    public void invalidTestCaseCreation() {
         caseSteps.caseCreation("",TEST_CASE_DESCRIPTION,
                 TEST_CASE_PRE_CONDITIONS,TEST_CASE_POST_CONDITIONS,TEST_CASE_STATUS,
                 TEST_CASE_SEVERITY, TEST_CASE_PRIORITY,TEST_CASE_TYPE,

@@ -25,7 +25,7 @@ public class LoginPage implements TestConstants {
         passwordInput.sendKeys(password);
         log.info("Click login button");
     }
-    @Step("Login with successful data")
+    @Step("Login with valid data")
     public void successfulLogin() {
         PropertyReader propertyReader = new PropertyReader();
         login(propertyReader.getProperty("email"), propertyReader.getProperty("password"));

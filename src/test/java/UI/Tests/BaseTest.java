@@ -42,7 +42,7 @@ public class BaseTest {
         defectsSteps = new DefectsSteps();
     }
 
-    @AfterMethod
+    @AfterMethod(description = "Closing browser")
     public void closeBrowser() {
         WebDriverRunner.closeWebDriver();
     }
