@@ -1,6 +1,7 @@
 package UI.Pages;
 
 import Utils.TestConstants;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
@@ -23,6 +24,7 @@ public class CreateNewTestRunPage implements TestConstants {
         log.info("Set {} as a title",testRunTitle);
         title.sendKeys(testRunTitle);
         log.info("Click add cases button");
+        Selenide.executeJavaScript("window.scrollBy(0,600)");
         addCasesButton.click();
         log.info("Select test case");
         selectTestCaseCheckBox.click();
