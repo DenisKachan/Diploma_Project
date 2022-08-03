@@ -1,7 +1,7 @@
 package UI.Pages;
 
-import UI.Utils.PropertyReader;
-import UI.Utils.TestConstants;
+import Utils.PropertyReader;
+import Utils.TestConstants;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
@@ -25,7 +25,7 @@ public class LoginPage implements TestConstants {
         passwordInput.sendKeys(password);
         log.info("Click login button");
     }
-    @Step("Login with successful data")
+    @Step("Login with valid data")
     public void successfulLogin() {
         PropertyReader propertyReader = new PropertyReader();
         login(propertyReader.getProperty("email"), propertyReader.getProperty("password"));

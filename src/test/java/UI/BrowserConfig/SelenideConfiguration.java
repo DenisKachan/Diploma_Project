@@ -1,6 +1,6 @@
 package UI.BrowserConfig;
 
-import UI.Utils.PropertyReader;
+import Utils.PropertyReader;
 import com.codeborne.selenide.Configuration;
 
 import static com.codeborne.selenide.Browsers.*;

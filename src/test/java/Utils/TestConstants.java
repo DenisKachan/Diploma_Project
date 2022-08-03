@@ -1,4 +1,4 @@
-package UI.Utils;
+package Utils;
 
 import com.github.javafaker.Faker;
 

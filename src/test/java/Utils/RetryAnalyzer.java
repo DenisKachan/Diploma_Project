@@ -1,4 +1,4 @@
-package UI.Utils;
+package Utils;
 
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
