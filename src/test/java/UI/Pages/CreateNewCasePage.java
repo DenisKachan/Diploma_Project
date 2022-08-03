@@ -44,12 +44,12 @@ public class CreateNewCasePage implements TestConstants {
         new DropdownTestCase("Type").select(type);
         log.info("Set {} as a layer",layer);
         new DropdownTestCase("Layer").select(layer);
-        log.info("Set {} as a flaky condition",flaky);
-        new DropdownTestCase("Is flaky").select(flaky);
         log.info("Set {} as a behavior", behavior);
         new DropdownTestCase("Behavior").select(behavior);
         log.info("Set {} as an automation status",automationStatus);
         new DropdownTestCase("Automation status").select(automationStatus);
+        log.info("Set {} as a flaky condition",flaky);
+        new DropdownTestCase("Is flaky").select(flaky);
     }
 
     @Step("Case creation with valid data")
