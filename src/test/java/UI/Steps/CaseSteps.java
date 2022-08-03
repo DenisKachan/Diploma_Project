@@ -1,6 +1,6 @@
 package UI.Steps;
 
-import UI.Utils.TestConstants;
+import Utils.TestConstants;
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;

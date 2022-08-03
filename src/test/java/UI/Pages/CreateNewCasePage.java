@@ -1,6 +1,6 @@
 package UI.Pages;
 
-import UI.Utils.TestConstants;
+import Utils.TestConstants;
 import UI.Wrappers.DropdownTestCase;
 import UI.Wrappers.InputTestCase;
 import com.codeborne.selenide.SelenideElement;

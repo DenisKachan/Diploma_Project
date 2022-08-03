@@ -1,6 +1,6 @@
 package UI.Pages;
 
-import UI.Utils.TestConstants;
+import Utils.TestConstants;
 import com.codeborne.selenide.SelenideElement;
 import com.github.javafaker.Faker;
 import io.qameta.allure.Step;

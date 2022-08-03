@@ -1,7 +1,7 @@
 package UI.Tests;
 
-import UI.Utils.PropertyReader;
-import UI.Utils.TestConstants;
+import Utils.PropertyReader;
+import Utils.TestConstants;
 
 import org.testng.annotations.Test;
 

@@ -1,6 +1,6 @@
 package UI.Pages;
 
-import UI.Utils.TestConstants;
+import Utils.TestConstants;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;

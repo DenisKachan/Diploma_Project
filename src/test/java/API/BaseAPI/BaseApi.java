@@ -1,6 +1,6 @@
 package API.BaseAPI;
 
-import UI.Utils.PropertyReader;
+import Utils.PropertyReader;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import io.qameta.allure.Step;

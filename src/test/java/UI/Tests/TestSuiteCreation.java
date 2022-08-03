@@ -1,6 +1,6 @@
 package UI.Tests;
 
-import UI.Utils.TestConstants;
+import Utils.TestConstants;
 import org.testng.annotations.Test;
 
 public class TestSuiteCreation extends BaseTest implements TestConstants {

@@ -1,8 +1,10 @@
 package API.dto.projects;
 
 import com.google.gson.annotations.Expose;
+import lombok.Builder;
 import lombok.Data;
 
+@Builder
 @Data
 public class Project {
     @Expose

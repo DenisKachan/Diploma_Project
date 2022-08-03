@@ -2,8 +2,8 @@ package UI.Tests;
 
 import UI.BrowserConfig.SelenideConfiguration;
 import UI.Steps.*;
-import UI.Utils.PropertyReader;
-import UI.Utils.TestListener;
+import Utils.PropertyReader;
+import Utils.TestListener;
 import com.codeborne.selenide.WebDriverRunner;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;

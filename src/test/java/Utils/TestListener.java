@@ -1,4 +1,4 @@
-package UI.Utils;
+package Utils;
 
 import com.codeborne.selenide.Selenide;
 import org.testng.ITestListener;
