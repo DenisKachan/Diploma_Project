@@ -24,7 +24,7 @@ public class CreateNewTestRunPage implements TestConstants {
         log.info("Set {} as a title",testRunTitle);
         title.sendKeys(testRunTitle);
         log.info("Click add cases button");
-        Selenide.executeJavaScript("window.scrollBy(0,600)");
+        Selenide.executeJavaScript("arguments[0].scrollIntoView(true);", addCasesButton);
         addCasesButton.click();
         log.info("Select test case");
         selectTestCaseCheckBox.click();
