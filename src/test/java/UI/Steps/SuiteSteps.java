@@ -10,13 +10,14 @@ import lombok.extern.log4j.Log4j2;
 public class SuiteSteps extends BaseStep implements TestConstants {
 
     @Step("Suite creation with established data")
-    public void suiteCreation(String suiteName, String suiteDescription, String suitePreconditions) {
+    public SuiteSteps suiteCreation(String suiteName, String suiteDescription, String suitePreconditions) {
         loginPage.successfulLogin();
         listOfProjectsPage.clickCreateProjectButton();
         createNewProjectPage.successfulProjectCreation();
         repositoryPage.clickCreateSuiteButton();
-        createNewSuitePage.newSuiteCreation(suiteName,suiteDescription,suitePreconditions);
-        createNewSuitePage.save();
+        createNewSuitePage.newSuiteCreation(suiteName,suiteDescription,suitePreconditions)
+                            .save();
+        return this;
     }
 
     @Step("Checking for a new suite title to be {suiteName}")

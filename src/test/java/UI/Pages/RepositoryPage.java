@@ -10,9 +10,10 @@ import static com.codeborne.selenide.Selenide.$;
 
 @Log4j2
 public class RepositoryPage {
+
     public SelenideElement createSuiteButton = $(By.id("create-suite-button"));
     public SelenideElement createCaseButton = $(By.id("create-case-button"));
-    public SelenideElement testRunsButton = $x("//a[@title='Test Runs']");
+    public SelenideElement testRunsButton = $x("//span[text()='Test Runs']");
     public SelenideElement testDefectsButton = $x("//a[@title='Defects']");
     public SelenideElement testCaseTitle = $x("//div[@class='jp0OXJ nzJYNg']");
     public SelenideElement testSuiteTitle = $x("//a[@class='Vap5jx']");
@@ -43,5 +44,4 @@ public class RepositoryPage {
         testDefectsButton.click();
         return new ListOfDefectsPage();
     }
-
 }

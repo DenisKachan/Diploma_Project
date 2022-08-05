@@ -9,7 +9,7 @@ import lombok.extern.log4j.Log4j2;
 public class CaseSteps extends BaseStep implements TestConstants {
 
     @Step("Case creation with established data")
-    public void caseCreation(String title, String description, String preConditions, String postConditions,
+    public CaseSteps caseCreation(String title, String description, String preConditions, String postConditions,
                                        String status, String severity, String priority, String type,
                                        String layer, String flaky, String behavior, String automationStatus) {
         loginPage.successfulLogin();
@@ -18,8 +18,9 @@ public class CaseSteps extends BaseStep implements TestConstants {
         repositoryPage.clickCreateCaseButton();
         createNewCasePage.caseCreation(title,description,preConditions,postConditions,
                 status,severity,priority,type,
-                layer,flaky,behavior,automationStatus);
-        createNewCasePage.save();
+                layer,flaky,behavior,automationStatus)
+                         .save();
+        return this;
     }
 
     @Step("Checking for a test case title to be {testCaseTitle}")

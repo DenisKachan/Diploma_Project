@@ -10,6 +10,7 @@ import static com.codeborne.selenide.Selenide.$x;
 
 @Log4j2
 public class ListOfDefectsPage {
+
     public SelenideElement createNewDefectButton = $x("//a[@class='btn btn-primary']");
     public SelenideElement createdDefectTitle = $(By.id("defect-1-title"));
 
@@ -19,5 +20,4 @@ public class ListOfDefectsPage {
         createNewDefectButton.click();
         return new CreateNewDefectPage();
     }
-
 }

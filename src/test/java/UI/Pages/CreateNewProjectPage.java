@@ -12,6 +12,7 @@ import static com.codeborne.selenide.Selenide.$x;
 
 @Log4j2
 public class CreateNewProjectPage implements TestConstants {
+
     public SelenideElement pageTitle = $x("//h1[text()='New Project']");
     public SelenideElement newProjectTitle = $(By.id("inputTitle"));
     public SelenideElement newProjectCode = $(By.id("inputCode"));
@@ -20,7 +21,7 @@ public class CreateNewProjectPage implements TestConstants {
     public SelenideElement createProjectButton = $x("//button[text()='Create project']");
 
     @Step("Creation of a new private project with {projectTitle} as a title, {projectCode} as a code and {projectDescription} as a description")
-    public void createNewProject(String projectTitle, String projectCode, String projectDescription) {
+    public CreateNewProjectPage createNewProject(String projectTitle, String projectCode, String projectDescription) {
         log.info("Set {} as a title",projectTitle);
         newProjectTitle.sendKeys(projectTitle);
         log.info("Set {} as a code", projectCode);
@@ -29,6 +30,7 @@ public class CreateNewProjectPage implements TestConstants {
         newProjectDescription.sendKeys(projectDescription);
         log.info("Choose private type of project");
         newProjectPrivateType.click();
+        return this;
     }
 
     @Step("Creation of a new project with valid data")
@@ -44,5 +46,4 @@ public class CreateNewProjectPage implements TestConstants {
         createProjectButton.click();
         return new RepositoryPage();
     }
-
 }

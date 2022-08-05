@@ -11,6 +11,7 @@ import static com.codeborne.selenide.Selenide.$x;
 
 @Log4j2
 public class CreateNewSuitePage implements TestConstants {
+
     public SelenideElement suiteName = $(By.id("name"));
     public SelenideElement suiteDescription = $(By.id("description"));
     public SelenideElement suitePreconditions = $(By.id("preconditions"));
@@ -18,13 +19,14 @@ public class CreateNewSuitePage implements TestConstants {
     public SelenideElement createSuiteTitle = $x("//h2[text()='Create suite']");
 
     @Step("Suite creation with {name} as a name, {description} as a description and {preconditions} as preconditions")
-    public void newSuiteCreation(String name, String description, String preconditions){
+    public CreateNewSuitePage newSuiteCreation(String name, String description, String preconditions){
         log.info("Set {} as a name",name);
         suiteName.sendKeys(name);
         log.info("Set {} as a description", description);
         suiteDescription.sendKeys(description);
         log.info("Set {} as preconditions", preconditions);
         suitePreconditions.sendKeys(preconditions);
+        return this;
     }
 
     @Step("Suite creation with valid data")
@@ -41,5 +43,4 @@ public class CreateNewSuitePage implements TestConstants {
         createSuiteButton.click();
         return new RepositoryPage();
     }
-
 }

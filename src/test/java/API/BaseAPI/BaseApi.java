@@ -6,7 +6,6 @@ import com.google.gson.GsonBuilder;
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-
 import static io.restassured.RestAssured.given;
 
 public class BaseApi {

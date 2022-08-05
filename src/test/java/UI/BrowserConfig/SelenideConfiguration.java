@@ -6,9 +6,9 @@ import com.codeborne.selenide.Configuration;
 import static com.codeborne.selenide.Browsers.*;
 
 public class SelenideConfiguration {
+
     public static void configureBrowser(String browser) {
         setUpBasicConfigure();
-
         switch (browser) {
             case "safari":
                 Configuration.browser = SAFARI;
@@ -29,6 +29,5 @@ public class SelenideConfiguration {
         Configuration.browserSize = propertyReader.getProperty("browserSize");
         Configuration.timeout = Long.parseLong(propertyReader.getProperty("timeout"));
         Configuration.screenshots = Boolean.parseBoolean(propertyReader.getProperty("screenshots"));
-
     }
 }

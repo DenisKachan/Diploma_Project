@@ -10,6 +10,7 @@ import static com.codeborne.selenide.Selenide.$x;
 
 @Log4j2
 public class ListOfProjectsPage {
+
     public SelenideElement createProjectButton = $(By.id("createButton"));
     public SelenideElement accountImage = $(By.className("Eb2vGG"));
     public SelenideElement signOutButton = $x("//span[text()='Sign out']");

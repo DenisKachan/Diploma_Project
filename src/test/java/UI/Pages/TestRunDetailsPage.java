@@ -10,6 +10,7 @@ import static com.codeborne.selenide.Selenide.$x;
 
 @Log4j2
 public class TestRunDetailsPage {
+
     public SelenideElement openWizardButton = $(By.id("open-wizard"));
     public SelenideElement passedStatusButton = $x("//a[text()='Passed']");
     public SelenideElement testRunResult = $(By.id("run-case-results-1"));
@@ -21,5 +22,4 @@ public class TestRunDetailsPage {
         log.info("Set passed status");
         passedStatusButton.click();
     }
-
 }
