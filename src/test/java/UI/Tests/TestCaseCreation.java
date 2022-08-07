@@ -1,11 +1,12 @@
 package UI.Tests;
 
+import Utils.RetryAnalyzer;
 import Utils.TestConstants;
 import org.testng.annotations.Test;
 
 public class TestCaseCreation extends BaseTest implements TestConstants {
 
-    @Test(description = "Test for valid work of test case creation with valid data")
+    @Test(retryAnalyzer = RetryAnalyzer.class,description = "Test for valid work of test case creation with valid data")
     public void successfulTestCaseCreation() {
         caseSteps.caseCreation(TEST_CASE_TITLE,TEST_CASE_DESCRIPTION,
                 TEST_CASE_PRE_CONDITIONS,TEST_CASE_POST_CONDITIONS,TEST_CASE_STATUS,
@@ -14,7 +15,7 @@ public class TestCaseCreation extends BaseTest implements TestConstants {
                 .successfulCaseCreationChecking(TEST_CASE_TITLE);
     }
 
-    @Test(description = "Test for valid work of test case creation with invalid data")
+    @Test(retryAnalyzer = RetryAnalyzer.class,description = "Test for valid work of test case creation with invalid data")
     public void invalidTestCaseCreation() {
         caseSteps.caseCreation("",TEST_CASE_DESCRIPTION,
                 TEST_CASE_PRE_CONDITIONS,TEST_CASE_POST_CONDITIONS,TEST_CASE_STATUS,
