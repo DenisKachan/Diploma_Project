@@ -6,6 +6,7 @@ import static com.codeborne.selenide.Selenide.$x;
 
 @Data
 public class DropdownTestCase {
+
     String label;
 
     public DropdownTestCase(String label) {

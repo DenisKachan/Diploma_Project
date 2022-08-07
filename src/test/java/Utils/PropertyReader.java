@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class PropertyReader {
+
     private Properties properties;
 
     public PropertyReader() {

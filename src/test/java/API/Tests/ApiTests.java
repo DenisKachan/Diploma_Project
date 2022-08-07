@@ -8,6 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class ApiTests extends BaseApiTest implements TestConstants {
+
     Faker faker = new Faker();
 
     @Test(description = "Getting project by code using get request")

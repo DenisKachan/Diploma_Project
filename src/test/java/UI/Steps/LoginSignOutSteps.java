@@ -9,15 +9,17 @@ import lombok.extern.log4j.Log4j2;
 public class LoginSignOutSteps extends BaseStep {
 
     @Step("Login with established data")
-    public void login(String email, String password) {
-        loginPage.login(email, password);
-        loginPage.clickLoginButton();
+    public LoginSignOutSteps login(String email, String password) {
+        loginPage.login(email, password)
+                    .clickLoginButton();
+        return this;
     }
 
     @Step("Successful SignOut")
-    public void successfulSignOut() {
+    public LoginSignOutSteps successfulSignOut() {
         loginPage.successfulLogin();
         listOfProjectsPage.signOut();
+        return this;
     }
 
     @Step("Checking for Create new project button to be visible")

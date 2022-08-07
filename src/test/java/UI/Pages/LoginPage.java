@@ -12,18 +12,19 @@ import static com.codeborne.selenide.Selenide.$x;
 
 @Log4j2
 public class LoginPage implements TestConstants {
+
     public SelenideElement emailInput = $("#inputEmail");
     public SelenideElement passwordInput = $x("//input[@type='password']");
     public SelenideElement loginButton = $(By.id("btnLogin"));
     public SelenideElement errorMessage = $x("//div[contains(@class,'error')]/div");
 
     @Step("Setting {email} as an email and {password} as a password")
-    public void login(String email, String password) {
+    public LoginPage login(String email, String password) {
         log.info("Set {} as an email",email);
         emailInput.sendKeys(email);
         log.info("Set {} as a password",password);
         passwordInput.sendKeys(password);
-        log.info("Click login button");
+        return this;
     }
     @Step("Login with valid data")
     public void successfulLogin() {
@@ -38,8 +39,4 @@ public class LoginPage implements TestConstants {
         loginButton.click();
         return new ListOfProjectsPage();
     }
-
-
-
-
 }

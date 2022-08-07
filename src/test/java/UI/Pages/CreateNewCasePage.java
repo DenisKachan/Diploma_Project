@@ -13,6 +13,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 @Log4j2
 public class CreateNewCasePage implements TestConstants {
+
     public SelenideElement title = $x("//h1[text()='Create test case']");
     public SelenideElement saveButton = $(By.id("save-case"));
 
@@ -23,7 +24,7 @@ public class CreateNewCasePage implements TestConstants {
         return new RepositoryPage();
     }
     @Step("Creation of a new test case")
-    public void caseCreation(String title, String description, String preConditions, String postConditions,
+    public CreateNewCasePage caseCreation(String title, String description, String preConditions, String postConditions,
                              String status, String severity, String priority, String type,
                              String layer, String flaky, String behavior, String automationStatus) {
         log.info("Set {} as a title",title);
@@ -50,6 +51,7 @@ public class CreateNewCasePage implements TestConstants {
         new DropdownTestCase("Automation status").select(automationStatus);
         log.info("Set {} as a flaky condition",flaky);
         new DropdownTestCase("Is flaky").select(flaky);
+        return this;
     }
 
     @Step("Case creation with valid data")
@@ -60,5 +62,4 @@ public class CreateNewCasePage implements TestConstants {
                 TEST_CASE_BEHAVIOR, TEST_CASE_AUTOMATION_STATUS);
         save();
     }
-
 }

@@ -10,6 +10,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 @Log4j2
 public class ListOfTestRunsPage {
+
     public SelenideElement createTestRunButton = $(By.id("start-new-test-run-button"));
     public SelenideElement testRunTitle = $x("//td/descendant::a[@class = 'defect-title']");
 
@@ -26,5 +27,4 @@ public class ListOfTestRunsPage {
         testRunTitle.click();
         return new TestRunDetailsPage();
     }
-
 }

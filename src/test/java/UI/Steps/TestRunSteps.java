@@ -9,7 +9,7 @@ import lombok.extern.log4j.Log4j2;
 public class TestRunSteps extends BaseStep implements TestConstants {
 
     @Step("Test run creation with established data")
-    public void testRunCreation(String testRunTitle) {
+    public TestRunSteps testRunCreation(String testRunTitle) {
         loginPage.successfulLogin();
         listOfProjectsPage.clickCreateProjectButton();
         createNewProjectPage.successfulProjectCreation();
@@ -19,12 +19,13 @@ public class TestRunSteps extends BaseStep implements TestConstants {
         createNewSuitePage.successfulNewSuiteCreation();
         repositoryPage.openTestRunPage();
         listOfTestRunsPage.clickCreateTestRunButton();
-        createNewTestRunPage.testRunCreation(testRunTitle);
-        createNewTestRunPage.saveTestRun();
+        createNewTestRunPage.testRunCreation(testRunTitle)
+                            .saveTestRun();
+        return this;
     }
 
     @Step("Setting test run status with established data")
-    public void setTestRunStatus(){
+    public TestRunSteps setTestRunStatus(){
         loginPage.successfulLogin();
         listOfProjectsPage.clickCreateProjectButton();
         createNewProjectPage.successfulProjectCreation();
@@ -37,6 +38,7 @@ public class TestRunSteps extends BaseStep implements TestConstants {
         createNewTestRunPage.successfulTestRunCreation();
         listOfTestRunsPage.openTestRunDetailsPage();
         testRunDetailsPage.setTestRunResult();
+        return this;
     }
 
     @Step("Checking for a test run title to be {testRunTitle}")

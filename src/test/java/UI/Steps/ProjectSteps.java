@@ -8,11 +8,12 @@ import lombok.extern.log4j.Log4j2;
 public class ProjectSteps extends BaseStep {
 
     @Step("Project creation with established data")
-    public void projectCreation(String title, String code, String description) {
+    public ProjectSteps projectCreation(String title, String code, String description) {
         loginPage.successfulLogin();
         listOfProjectsPage.clickCreateProjectButton();
-        createNewProjectPage.createNewProject(title, code, description);
-        createNewProjectPage.saveNewProject();
+        createNewProjectPage.createNewProject(title, code, description)
+                            .saveNewProject();
+        return this;
     }
 
     @Step("Checking for a Create new project page title to be visible")

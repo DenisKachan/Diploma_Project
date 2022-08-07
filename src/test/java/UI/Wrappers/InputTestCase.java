@@ -6,6 +6,7 @@ import static com.codeborne.selenide.Selenide.$x;
 
 @Data
 public class InputTestCase {
+
     String label;
 
     public InputTestCase(String label) {

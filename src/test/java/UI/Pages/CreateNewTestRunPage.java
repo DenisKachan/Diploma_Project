@@ -13,6 +13,7 @@ import static com.codeborne.selenide.Selenide.webdriver;
 
 @Log4j2
 public class CreateNewTestRunPage implements TestConstants {
+
     public SelenideElement title = $(By.id("title"));
     public SelenideElement addCasesButton = $(By.id("edit-run-add-cases-button"));
     public SelenideElement selectTestCaseCheckBox = $(By.className("custom-control-indicator"));
@@ -20,7 +21,7 @@ public class CreateNewTestRunPage implements TestConstants {
     public SelenideElement saveRunButton = $(By.id("save-run-button"));
 
     @Step("Creation of a new test run with {testRunTitle} as a title")
-    public void testRunCreation(String testRunTitle) {
+    public CreateNewTestRunPage testRunCreation(String testRunTitle) {
         log.info("Clear default test run title");
         title.clear();
         log.info("Set {} as a title",testRunTitle);
@@ -32,6 +33,7 @@ public class CreateNewTestRunPage implements TestConstants {
         selectTestCaseCheckBox.click();
         log.info("Click done button");
         doneButton.click();
+        return this;
     }
 
     @Step("Save test run and open List of test runs page")
@@ -46,5 +48,4 @@ public class CreateNewTestRunPage implements TestConstants {
         testRunCreation(TEST_RUN_TITLE);
         saveTestRun();
     }
-
 }
