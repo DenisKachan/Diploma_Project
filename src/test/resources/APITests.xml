@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="APITests" parallel="methods" thread-count="2">
+<suite name="APITests" parallel="methods" thread-count="1">
     <test name="API Tests">
         <packages>
-            <package name="API.ApiTests"/>
+            <package name="API.Tests"/>
         </packages>
     </test>
 </suite>
